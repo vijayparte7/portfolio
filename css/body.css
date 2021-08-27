@@ -1,0 +1,220 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom right,
+    rgb(42, 27, 60),
+    rgb(68, 49, 141)
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.bg {
+  z-index: -1;
+  position: fixed;
+  top: 16%;
+  right: 8%;
+  height: 69vh;
+  animation: rotating 70s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.page-load {
+  position: absolute;
+  z-index: 5;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #181023;
+  transform-origin: top;
+  animation: pageLoad 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5s forwards;
+}
+@keyframes pageLoad {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
+@keyframes rotating {
+  0% {
+    /*transform-origin: 50% 50% ;*/
+    transform: rotate(0deg) scale(1.5);
+  }
+  50% {
+    transform: rotate(180deg) scale(2);
+  }
+  100% {
+    /*transform-origin: 50% 50% ;*/
+    transform: rotate(360deg) scale(1.5);
+  }
+}
+@keyframes rotat {
+  0% {
+    /*transform-origin: 50% 50% ;*/
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    /*transform-origin: 50% 50% ;*/
+    transform: rotate(360deg) scale(1);
+  }
+}
+.navbar {
+  position: absolute;
+  z-index: 3;
+  margin: 0;
+  padding: 1vw 1vw;
+  width: 100vw;
+  height: 5vw;
+  top: 0;
+  background-color: rgba(126, 252, 0, 0);
+  /* transform-origin: top;
+  animation: pageLoad 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5s forwards; */
+}
+.navbar img {
+  position: fixed;
+  top: 1vw;
+  left: 1vw;
+  margin: 0;
+  width: 5vw;
+}
+.hamburger-container {
+  position: relative;
+  top: 0;
+  right: -93vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vw;
+  width: 5vw;
+  cursor: pointer;
+}
+.hamburger {
+  height: 0.3vw;
+  width: 4vw;
+  background-color: rgb(255, 255, 255);
+  border-radius: 1vw;
+  transition: 0.25s ease-in;
+}
+.hamburger::after,
+.hamburger::before {
+  content: "";
+  position: absolute;
+  height: 0.3vw;
+  width: 4vw;
+  background-color: rgb(255, 255, 255);
+  border-radius: 1vw;
+  transition: 0.25s ease-in;
+}
+.hamburger::after {
+  transform: translateY(-1.1vw);
+  transition: 0.25s ease-in;
+}
+.hamburger::before {
+  transform: translateY(1.1vw);
+}
+.navigate {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  vertical-align: middle;
+  background-image: linear-gradient(
+    to right,
+    rgb(30, 19, 42),
+    rgb(93, 14, 177),
+    rgb(201, 0, 219),
+    rgb(225, 26, 119)
+  );
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: 0.25s;
+}
+.navigate-animate {
+  transform: scaleY(1);
+}
+.h6-animate {
+  opacity: 1;
+  transform: scaleY(1);
+}
+.nav-ele {
+  color: white;
+  text-decoration: none;
+}
+@media screen and (max-width: 700px) {
+  .bg {
+    top: 0;
+    left: 15%;
+    height: 100vh;
+    animation: rotat 80s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .navbar {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 10vw;
+    top: 0;
+  }
+  .navbar img {
+    position: fixed;
+    top: 2vw;
+    left: 2vw;
+    margin: 2vw;
+    width: 10vw;
+  }
+  .hamburger-container {
+    position: relative;
+    top: 2vw;
+    right: -87vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vw;
+    width: 8vw;
+    cursor: pointer;
+  }
+  .hamburger {
+    height: 0.7vw;
+    width: 8vw;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1vw;
+    transition: 0.25s ease-in;
+  }
+  .hamburger::after,
+  .hamburger::before {
+    content: "";
+    position: absolute;
+    height: 0.7vw;
+    width: 8vw;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1vw;
+    transition: 0.25s ease-in;
+  }
+  .hamburger::after {
+    transform: translateY(-1.7vw);
+    transition: 0.25s ease-in;
+  }
+  .hamburger::before {
+    transform: translateY(1.7vw);
+  }
+}
